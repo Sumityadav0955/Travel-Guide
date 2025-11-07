@@ -1,0 +1,373 @@
+/* Map component styles */
+.map-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e1e5e9;
+  position: relative;
+  z-index: 1;
+  background: #f3f4f6;
+}
+
+.map-wrapper .leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background: #e5e7eb;
+}
+
+/* Ensure Leaflet tiles load properly */
+.leaflet-tile-container {
+  z-index: 1;
+}
+
+.leaflet-pane {
+  z-index: auto;
+}
+
+.map-popup {
+  min-width: 200px;
+}
+
+.map-popup h4 {
+  margin: 0 0 8px 0;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.map-popup p {
+  margin: 0 0 12px 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.popup-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.popup-meta .category {
+  background: #e8f4f8;
+  color: #2980b9;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.popup-meta .rating {
+  color: #f39c12;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Selected marker styling */
+.selected-marker {
+  filter: hue-rotate(120deg) saturate(1.5);
+}
+
+/* Cluster marker styles */
+.cluster-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.cluster-marker {
+  background: #3498db;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cluster-popup {
+  min-width: 250px;
+}
+
+.cluster-popup h4 {
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.cluster-locations {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.cluster-location-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cluster-location-item:hover {
+  background-color: #f8f9fa;
+  margin: 0 -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 4px;
+}
+
+.cluster-location-item:last-child {
+  border-bottom: none;
+}
+
+.cluster-location-item strong {
+  display: block;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.cluster-location-item .category {
+  background: #e8f4f8;
+  color: #2980b9;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 11px;
+  text-transform: capitalize;
+  margin-right: 8px;
+}
+
+.cluster-location-item .rating {
+  color: #f39c12;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Map picker specific styles */
+.map-picker {
+  margin-bottom: 20px;
+}
+
+.map-picker .map-container {
+  margin-bottom: 12px;
+}
+
+.map-picker .map-placeholder {
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #6c757d;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.manual-coordinates {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.coordinate-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.coordinate-inputs .input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.coordinate-inputs label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 4px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .coordinate-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-controls {
+    flex-direction: column;
+  }
+  
+  .popup-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+/* Loca
+tion Map specific styles */
+.location-map {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.map-controls-panel {
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.search-input-group {
+  flex: 1;
+}
+
+.search-input-group .form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.search-input-group .form-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.filter-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-controls .form-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+}
+
+.filter-controls .form-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.map-action-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.map-action-controls .btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.map-action-controls .btn:hover:not(:disabled) {
+  background: #f8f9fa;
+  border-color: #3498db;
+}
+
+.map-action-controls .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.location-count {
+  background: #e8f4f8;
+  color: #2980b9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+.interactive-map {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-help-text {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+}
+
+.map-help-text p {
+  margin: 0;
+  color: #856404;
+  font-size: 14px;
+}
+
+/* Responsive design for map controls */
+@media (max-width: 768px) {
+  .search-controls {
+    gap: 8px;
+  }
+  
+  .filter-controls {
+    flex-direction: column;
+  }
+  
+  .filter-controls .form-select {
+    width: 100%;
+  }
+  
+  .map-action-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .location-count {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .search-controls {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  
+  .filter-controls {
+    flex-shrink: 0;
+  }
+}
